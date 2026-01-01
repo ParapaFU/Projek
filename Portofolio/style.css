@@ -3,6 +3,23 @@
     box-shadow: 0 0 0 4px rgba(0, 0, 0, .25);
 }
 
+section{
+    margin:0 58px;
+    position: relative;
+}
+
+section::before{
+    z-index: -1;
+    content: '';
+    font-size: 72px;
+    position: absolute;
+    top: -110px;
+    left: -30px;
+    font-weight: 700;
+    color: grey;
+    opacity: 0.30;
+}
+
 .home{
     margin-top: 100px;
 }
@@ -15,24 +32,111 @@
     font-size: 72px;
 }
 
-.home .btn.button{
+.btn.button{
     border: 3px solid black;
     border-radius: 24px;
 }
 
-.home .btn.button:hover{
+.btn.button:hover, .btn.button.active{
     background-color: black;
     color: white;
 }
 
 .home .arrow{
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .home .arrow img{
     width: 60px;
     margin-top: 5px;
     animation: upDown 1s infinite;
+}
+
+.about{
+    margin-top: 250px;
+}
+
+.about::before{
+    content: 'About';
+}
+
+.about-exp-item{
+    margin-top: 30px;
+}
+
+.about-exp-item-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}   
+
+.about-exp-item-detail{
+    display: none;
+}
+
+.work{
+    margin-top: 350px;
+}
+
+.work::before{
+    content: 'Work';
+}
+
+.work-img{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 'work-1 work-2'
+    'work-3 work-3';
+    gap: 16px;
+}
+
+.work-img-item{
+    position: relative;
+}
+
+.work-img-item:hover::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.work-img img{
+    width: 100%;
+}
+
+#work-1{
+    grid-area: work-1;
+}
+
+#work-1:hover::after{
+    content: 'Web Project';
+}
+
+#work-2{
+    grid-area: work-2;
+}
+
+#work-2:hover::after{
+    content: 'Software Project';
+}
+
+#work-3{
+    grid-area: work-3;
+}
+
+
+#work-3:hover::after{
+    content: 'Backend Project';
 }
 
 @keyframes upDown {
