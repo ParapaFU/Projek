@@ -25,6 +25,24 @@
     color: white;
 }
 
+.home .arrow{
+    margin-top: 20px;
+}
+
 .home .arrow img{
     width: 60px;
+    margin-top: 5px;
+    animation: upDown 1s infinite;
+}
+
+@keyframes upDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
