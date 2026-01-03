@@ -5,6 +5,7 @@
 
 section{
     margin:0 58px;
+    margin-bottom: 256px;
     position: relative;
 }
 
@@ -137,6 +138,32 @@ section::before{
 
 #work-3:hover::after{
     content: 'Backend Project';
+}
+
+.contact::before{
+    content: 'Contact';
+}
+
+.contact-form{
+    border: 1px solid black;
+    padding: 64px 32px;
+}
+
+.form-label{
+    font-weight: 500;
+}
+
+@media only screen and (max-width:768px) {
+    .home .col-12 img{
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    section::before{
+        left: 0;
+        font-size: 64px;
+    }
 }
 
 @keyframes upDown {
